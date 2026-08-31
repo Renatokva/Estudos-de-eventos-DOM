@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="Pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX002 -- eventos DOM</title>
+    <style>
+        div#area{
+            font-size: 20px;
+            width: 200px;
+            height: 200px;
+            background-color: #0909ea;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+            
+    </style>
+</head>
+<body>
+    <div id="area" ondblclick="duplo()" onclick="clicar()" onmouseover="entrar()" onmouseout="sair()">Interagir</div>
+    <script>
+
+        function duplo(){
+            let dual = document.getElementById('area');
+            dual.innerHTML = 'Duplo Click!';
+        }
+        function entrar() {
+            let entra = document.getElementById('area');
+            entra.innerText = 'Entrou!';
+        }
+        function sair() {
+            let sair = document.getElementById('area');
+            sair.innerText = 'Saiu!' ;
+        }
+        function clicar() {
+            let area = document.getElementById('area');
+            area.innerText = 'Clicou!';
+        }
+    </script>
+</body>
+</html>
