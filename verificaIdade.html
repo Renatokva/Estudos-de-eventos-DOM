@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Maioridade</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #a81eb5;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Verificação de Maioridade</h1>
+    <p>Digite sua idade:</p>
+    <input type="number" id="idade" placeholder="Digite sua idade">
+    <button id="verificar" onclick="verificarIdade()">Verificar</button>
+    <p id="resultado"></p>
+    <img id="img" src="pessoas.jpg" alt="Verificação de Maioridade" width="400" height="200">  
+    <script>
+        function verificarIdade() {
+            const idade = parseInt(document.getElementById('idade').value);
+            const resultado = document.getElementById('resultado');
+            const img = document.getElementById('img');
+
+            if (isNaN(idade)) {
+                resultado.textContent = 'Por favor, insira um número válido.';
+                return;
+                document.body.style.backgroundColor = '#a81eb8';
+                document.getElementById('img').src = 'pessoas.jpg';
+            }
+
+            if (idade < 18) {
+                resultado.textContent = 'Você é menor de idade.';
+                document.body.style.backgroundColor = '#ff6b6b';
+                document.getElementById('img').src = 'criança.jpg';
+
+            } else {
+                resultado.textContent = 'Você é maior de idade.';
+                document.body.style.backgroundColor = '#a81eb5';
+                document.getElementById('img').src = 'adulto.jpg';
+            }
+        }
+    </script>
+    </body>
+
+</html>
